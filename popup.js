@@ -1,5 +1,33 @@
-  document.querySelector(".checkbox").addEventListener("change", () => {
-        document.querySelectorAll(".night-mode-available").forEach((ele) => {
-          ele.classList.toggle("night");
-        });
+if (document.querySelector(".popup")) {
+  const button = document.querySelector(".button");
+  const circle = document.querySelector(".circle");
+  let buttonOn = false;
+
+  function invert() {
+    alert("hi");
+    document.body.style.filter = "invert(1) hue-rotate(180deg)";
+    let media = document.querySelectorAll("img, picture, video");
+    media.forEach((mediaItem) => {
+      mediaItem.style.filter = "invert(1) hue-rotate(180deg)";
+    });
+  }
+
+  button.addEventListener("click", () => {
+    if (!buttonOn) {
+      buttonOn = true;
+
+      button.style.animation = "transformToBlue .8s ease-in-out 0s forwards";
+      circle.style.animation = "moveCircleRight .8s ease-in-out 0s forwards";
+      chrome.tabs.executeScript({
+        file: "appOn.js",
       });
+    } else {
+      buttonOn = false;
+      button.style.animation = "transformToYellow .8s ease-in-out 0s forwards";
+      circle.style.animation = "moveCircleLeft .8s ease-in-out 0s forwards";
+      chrome.tabs.executeScript({
+        file: "appOff.js",
+      });
+    }
+  });
+}
