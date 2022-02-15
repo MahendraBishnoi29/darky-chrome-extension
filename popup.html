@@ -12,16 +12,32 @@
 
     <!-- css -->
     <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0/css/all.min.css"
+      integrity="sha256-ybRkN9dBjhcS2qrW1z+hfCxq+1aBdwyQM5wlQoQVt/0="
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <title>Night Mode</title>
   </head>
   <body>
-    <h1 class="title">Darky</h1>
-    <p class="desc">
-      Bored of Seeing the website the same boring Light Theme? Don't Worry DARKY
-      is Here ✌
-    </p>
-    <div class="button">
-      <div class="row">On</div>
-      <div class="row">Off</div>
+    <div class="card">
+      <div class="container night-mode-available">
+        <div class="night-mode-button">
+          <input type="checkbox" class="checkbox" id="night-mode" />
+          <label for="night-mode" class="label">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+            <div class="blob"></div>
+          </label>
+        </div>
+        <div class="info night-mode-available">
+          <h1>Hello World</h1>
+        </div>
+      </div>
     </div>
+
+    <script src="popup.js"></script>
   </body>
 </html>

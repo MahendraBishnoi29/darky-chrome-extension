@@ -6,8 +6,11 @@
 
 body {
   font-family: "Hind Siliguri", sans-serif;
+  display: flex;
+  justify-content: center;
 }
 
+/* 
 .button {
   display: flex;
   flex-direction: row;
@@ -21,4 +24,62 @@ body {
 .title {
   font-size: 1rem;
   letter-spacing: 1px;
+} */
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-top: 6rem;
+}
+
+.label {
+  background-color: black;
+  display: flex;
+  height: 35px;
+  border-radius: 50px;
+  width: 95px;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  padding: 0 15px;
+  transition: all 0.5s ease-in-out;
+  cursor: pointer;
+  border: 2px solid black;
+}
+
+.label .fa-moon {
+  color: rgb(250, 250, 250);
+}
+
+.label .fa-sun {
+  color: rgb(243, 188, 36);
+}
+
+.blob {
+  position: absolute;
+  left: 50%;
+  width: 50%;
+  height: 100%;
+  background: rgb(169, 241, 243);
+  border-radius: 50px;
+  transition: 0.5s ease all;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox:checked + .label .blob {
+  left: 0;
+}
+
+.card {
+  border: 1px solid black;
+  width: 50vw;
+  height: 50vh;
+  margin-top: 3rem;
+  padding: 50px;
 }
